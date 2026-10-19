@@ -1,0 +1,73 @@
+{
+  "_note": "SYNTHETIC DEMONSTRATION DATA ONLY. Every incident description starts with [DEMO] and every demo resource id starts with DEMO-, so demo data is easy to tell apart from live data. Coordinates are invented points in the same synthetic area the app already uses; they are not real emergency locations.",
+  "resources": [
+    {
+      "resource_id": "DEMO-RES-01",
+      "name": "DEMO Medical Team Bravo",
+      "type": "medical",
+      "latitude": 24.866,
+      "longitude": 67.012,
+      "equipment": ["first_aid", "oxygen"],
+      "max_people": 6
+    },
+    {
+      "resource_id": "DEMO-RES-02",
+      "name": "DEMO Rescue Team Kilo",
+      "type": "rescue",
+      "latitude": 24.856,
+      "longitude": 67.014,
+      "equipment": ["extraction_gear", "ropes", "stretchers"],
+      "max_people": 10
+    }
+  ],
+  "incidents": [
+    {
+      "key": "medical",
+      "description": "[DEMO] Severe chest pain at the community hall - patient cannot breathe, oxygen needed urgently",
+      "people_affected": 2,
+      "latitude": 24.8655,
+      "longitude": 67.0115,
+      "auto_plan": true,
+      "expected_urgency": "critical",
+      "note": "Classified high urgency from supplied evidence ('cannot breathe')."
+    },
+    {
+      "key": "rescue",
+      "description": "[DEMO] Family stranded on a roof after flash flood, need rescue by boat, water rising fast",
+      "people_affected": 4,
+      "latitude": 24.86,
+      "longitude": 67.0135,
+      "auto_plan": true,
+      "expected_urgency": "high",
+      "note": "Assigned to Rescue Team Bravo; later affected by the route closure."
+    },
+    {
+      "key": "supplies",
+      "description": "[DEMO] Not urgent: two tents needed at the community centre, no injuries",
+      "people_affected": 2,
+      "latitude": 24.8645,
+      "longitude": 67.003,
+      "auto_plan": false,
+      "expected_urgency": "low",
+      "note": "Explicitly non-urgent report - demonstrates that thin/relaxed reports are not inflated."
+    }
+  ],
+  "offline_sos": {
+    "description": "[DEMO] Child stuck under a collapsed cupboard, leg pinned, cannot move",
+    "people_affected": 1,
+    "latitude": 24.8605,
+    "longitude": 67.0055,
+    "expected_urgency": "critical",
+    "note": "Submitted to the Edge Gateway while it is OFFLINE; queued, survives a gateway restart, then synchronized."
+  },
+  "route": {
+    "name": "[DEMO] Harbour Road Corridor",
+    "from_lat": 24.8585,
+    "from_lng": 67.0065,
+    "to_lat": 24.8602,
+    "to_lng": 67.0075,
+    "reason": "Flooding - corridor impassable for vehicles",
+    "note": "This corridor crosses the direct path from Rescue Team Bravo to the roof-rescue incident, and only that path."
+  },
+  "approver": "Demo Coordinator"
+}
